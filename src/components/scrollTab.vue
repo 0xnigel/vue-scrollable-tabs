@@ -11,6 +11,12 @@
 <script>
 export default {
   name: "scrollTab",
+  props: {
+    getActiveIndex: {
+      type: Function,
+      default: () => {},
+    },
+  },
   data() {
     return {
       tabs: [],
@@ -26,6 +32,9 @@ export default {
       const item = this.tabs[index];
       const left = item.left + item.width / 2 - this.$refs.scrollTab.offsetWidth / 2;
       this.smoothScroll(left);
+    },
+    getActive(index) {
+      this.$emit("getActiveIndex", index);
     },
     calcWidth() {
       this.$nextTick(() => {

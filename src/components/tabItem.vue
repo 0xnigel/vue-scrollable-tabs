@@ -20,7 +20,7 @@ export default {
   methods: {
     handleClick() {
       this.$parent.active(this.index);
-      this.$emit("getActiveIndex", this.index);
+      this.$parent.getActive(this.index);
     },
   },
 };

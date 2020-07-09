@@ -1,14 +1,8 @@
 <template>
   <div class="app">
     <div class="scrollTab">
-      <scroll-tab ref="scrollTab">
-        <tab-item
-          class="item"
-          v-for="(item, index) in tabs"
-          :key="index"
-          :index="index"
-          @getActiveIndex="getActiveIndex"
-        >
+      <scroll-tab ref="scrollTab" @getActiveIndex="getActiveIndex">
+        <tab-item class="item" v-for="(item, index) in tabs" :key="index" :index="index">
           <div class="tabBox">
             <div class="tab" :class="{ active: activeIndex === index }">tab {{ index }}</div>
           </div>
@@ -35,6 +29,7 @@ export default {
   },
   methods: {
     getActiveIndex(i) {
+      console.log(i);
       this.activeIndex = i;
     },
   },
