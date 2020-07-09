@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :style="{ height: `${tabHeight}px` }">
+  <div class="vst-container" :style="{ height: `${tabHeight}px` }">
     <div ref="scrollTab" class="scrollTab">
       <div :style="{ width: `${wrapWidth}px` }" class="scrollTabWrap">
         <slot />
@@ -84,7 +84,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.vst-container {
   position: relative;
   overflow: hidden;
   .scrollTab {

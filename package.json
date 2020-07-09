@@ -1,7 +1,7 @@
 {
   "name": "vue-scrollable-tabs",
   "description": "A scrollable vue tab component",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "gxnie",
   "license": "MIT",
   "private": false,

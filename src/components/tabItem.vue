@@ -1,5 +1,5 @@
 <template>
-  <div class="tabItem" @click="handleClick">
+  <div class="vst-tabItem" @click="handleClick">
     <slot />
   </div>
 </template>
