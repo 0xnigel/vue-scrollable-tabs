@@ -12,7 +12,7 @@
 export default {
   name: "scrollTab",
   props: {
-    getActiveIndex: {
+    getActiveTab: {
       type: Function,
       default: () => {},
     },
@@ -33,8 +33,8 @@ export default {
       const left = item.left + item.width / 2 - this.$refs.scrollTab.offsetWidth / 2;
       this.smoothScroll(left);
     },
-    getActive(index) {
-      this.$emit("getActiveIndex", index);
+    getActive(data) {
+      this.$emit("getActiveTab", data);
     },
     calcWidth() {
       this.$nextTick(() => {

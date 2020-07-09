@@ -12,15 +12,15 @@ export default {
       type: Number,
       default: 0,
     },
-    getActiveIndex: {
-      type: Function,
-      default: () => {},
+    data: {
+      type: Object,
+      default: {},
     },
   },
   methods: {
     handleClick() {
       this.$parent.active(this.index);
-      this.$parent.getActive(this.index);
+      this.$parent.getActive(this.data);
     },
   },
 };

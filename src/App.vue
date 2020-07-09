@@ -1,10 +1,10 @@
 <template>
   <div class="app">
     <div class="scrollTab">
-      <scroll-tab ref="scrollTab" @getActiveIndex="getActiveIndex">
-        <tab-item class="item" v-for="(item, index) in tabs" :key="index" :index="index">
+      <scroll-tab ref="scrollTab" @getActiveTab="getActiveTab">
+        <tab-item class="item" v-for="(item, index) in tabs" :key="index" :index="index" :data="{ id: index }">
           <div class="tabBox">
-            <div class="tab" :class="{ active: activeIndex === index }">tab {{ index }}</div>
+            <div class="tab" :class="{ active: activeId === index }">tab {{ index }}</div>
           </div>
         </tab-item>
       </scroll-tab>
@@ -23,14 +23,14 @@ export default {
   },
   data() {
     return {
-      activeIndex: 0,
+      activeId: 0,
       tabs: new Array(20),
     };
   },
   methods: {
-    getActiveIndex(i) {
-      console.log(i);
-      this.activeIndex = i;
+    getActiveTab(data) {
+      console.log(data);
+      this.activeId = data.id || 0;
     },
   },
 };
